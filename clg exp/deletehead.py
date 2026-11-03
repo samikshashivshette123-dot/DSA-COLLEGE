@@ -1,0 +1,58 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class Operations:
+    def __init__(self):
+        self.head = None
+
+   
+    def create(self):
+        temp = None
+        while True:
+            val = int(input("Enter the Node data: "))
+            new_node = Node(val)   # Create a new node
+            if self.head is None:  	# First node
+                self.head = new_node
+                temp = self.head
+            else:				# Other nodes
+                temp.next = new_node
+                temp = new_node
+            ans = input("Do you want to enter more elements? (y/n): ")
+            if ans != 'y' and ans != 'Y':
+                break
+
+    def display(self):
+         temp = self.head
+         if temp is None:
+            print("Linked list is empty")
+         else:
+            while temp is not None:
+                print("|", temp.data, "| --> ", end="")
+                temp = temp.next
+            print("None")
+
+    def delete_head(self):
+        if self.head is None: # Check if linked list is empty
+            print("Linked list is empty")
+        else:      # Store the first node
+            temp =
+            self.head  
+        # Move head to the next node
+        self.head = self.head.next
+
+   
+    
+
+# Main program
+
+obj = Operations()
+
+obj.create()
+
+obj.display()
+
+obj.delete_head()
+obj.display()
